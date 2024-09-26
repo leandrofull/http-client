@@ -1,0 +1,20 @@
+{
+    "name": "leandrofull/http-client",
+    "type": "library",
+    "license": "proprietary",
+    "description": "Http Client",
+    "homepage": "https://github.com/leandrofull/http-client",
+    "autoload": {
+        "psr-4": {
+            "LeandroFull\\HttpClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leandro Martins Silva",
+            "email": "leandromsilva2209@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": { "php": ">=8.2.0" }
+}
