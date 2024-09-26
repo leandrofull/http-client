@@ -4,6 +4,16 @@ namespace LeandroFull\HttpClient;
 
 class HttpClient extends AbstractHttpClient
 {
+    public const GET = 'GET';
+
+    public const POST = 'POST';
+
+    public const PATCH = 'PATCH';
+
+    public const PUT = 'PUT';
+
+    public const DELETE = 'DELETE';
+
     public function __construct(private readonly string $baseUrl = '')
     {
         parent::__construct();
@@ -34,35 +44,35 @@ class HttpClient extends AbstractHttpClient
     public function get(string $endpoint = ''): HttpResponse
     {
         return $this->setEndpoint($endpoint)
-            ->setMethod('GET')
+            ->setMethod(self::GET)
             ->run();
     }
 
     public function post(string $endpoint = ''): HttpResponse
     {
         return $this->setEndpoint($endpoint)
-            ->setMethod('POST')
+            ->setMethod(self::POST)
             ->run();
     }
 
     public function put(string $endpoint = ''): HttpResponse
     {
         return $this->setEndpoint($endpoint)
-            ->setMethod('PUT')
+            ->setMethod(self::PUT)
             ->run();
     }
 
     public function patch(string $endpoint = ''): HttpResponse
     {
         return $this->setEndpoint($endpoint)
-            ->setMethod('PATCH')
+            ->setMethod(self::PATCH)
             ->run();
     }
 
     public function delete(string $endpoint = ''): HttpResponse
     {
         return $this->setEndpoint($endpoint)
-            ->setMethod('DELETE')
+            ->setMethod(self::DELETE)
             ->run();
     }
 }

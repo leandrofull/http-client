@@ -1,6 +1,6 @@
 # Http Client
 
-## Requirements:
+## Requirements
 - PHP 8.2
 - Curl Extension
 - Json Extension
@@ -11,7 +11,7 @@
 composer require leandrofull/http-client
 ```
 
-## Example:
+## Example
 
 ```php
 use LeandroFull\HttpClient\HttpClient;
@@ -67,51 +67,60 @@ var_dump($client->test1());
 var_dump($client->test2());
 ```
 
-## Client:
-1. run()
-2. setEndpoint(endpoint: string)
-3. unsetEndpoint()
-4. getEndpoint()
-5. setHeader(key: string, value: string)
-6. getHeader(key: string)
-7. unsetHeader(key: string)
-8. unsetAllHeaders()
-9. getAllHeaders()
-10. setBody(body: string|array)
-11. unsetBody()
-12. getBody()
-13. setMethod(method: string)
-14. getMethod()
-15. unsetMethod()
-16. setTimeout(timeout: int)
-17. getTimeout()
-18. unsetTimeout()
-19. setQuery(key: string, value: string)
-20. getQuery()
-21. unsetQuery(key: string)
-22. unsetAllQueries()
-23. getAllQueries()
-24. setCookie(key: string, value: string)
-25. getCookie(key: string)
-26. unsetCookie(key: string)
-27. unsetAllCookies()
-28. getAllCookies()
-29. setUserAgent(userAgent: string)
-30. getUserAgent()
-31. unsetUserAgent()
-32. setPayload(payload: array)
-33. get(endpoint: string)
-34. post(endpoint: string)
-35. put(endpoint: string)
-36. patch(endpoint: string)
-37. delete(endpoint: string)
-38. reset()
-39. getJson(url: string, method: string, payload: array|null)
+## HttpClient
+### Constants
+1. HttpClient::GET
+2. HttpClient::POST
+3. HttpClient::PATCH
+4. HttpClient::PUT
+5. HttpClient::DELETE
+### Methods
+1. run(): HttpResponse
+2. setEndpoint(endpoint: string): HttpClient
+3. unsetEndpoint(): HttpClient
+4. getEndpoint(): string|null
+5. setHeader(key: string, value: string): HttpClient
+6. getHeader(key: string): string|null
+7. unsetHeader(key: string): HttpClient
+8. unsetAllHeaders(): HttpClient
+9. getAllHeaders(): array
+10. setBody(body: string|array): HttpClient
+11. unsetBody(): HttpClient
+12. getBody(): array|string|null
+13. setMethod(method: string): HttpClient
+14. getMethod(): string
+15. unsetMethod(): HttpClient
+16. setTimeout(timeout: int): HttpClient
+17. getTimeout(): int|null
+18. unsetTimeout(): HttpClient
+19. setQuery(key: string, value: string): HttpClient
+20. getQuery(): string|null
+21. unsetQuery(key: string): HttpClient
+22. unsetAllQueries(): HttpClient
+23. getAllQueries(): array
+24. setCookie(key: string, value: string): HttpClient
+25. getCookie(key: string): string|null
+26. unsetCookie(key: string): HttpClient
+27. unsetAllCookies(): HttpClient
+28. getAllCookies(): array
+29. setUserAgent(userAgent: string): HttpClient
+30. getUserAgent(): string|null
+31. unsetUserAgent(): HttpClient
+32. setPayload(payload: array): HttpClient
+33. get(endpoint: string): HttpResponse
+34. post(endpoint: string): HttpResponse
+35. put(endpoint: string): HttpResponse
+36. patch(endpoint: string): HttpResponse
+37. delete(endpoint: string): HttpResponse
+38. reset(): HttpClient
+39. static getJson(url: string, method: string, payload: array|null): array|null
 
-## Response:
+## HttpResponse
+### Properties
 1. status: int
 2. data: string|null
 3. errorMessage: string|null
 4. error: bool
 5. info: array|null
-6. json(): array|null
+### Methods
+1. json(): array|null
