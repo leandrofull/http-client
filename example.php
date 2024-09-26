@@ -48,6 +48,6 @@ class TestClient
     }
 }
 
-$api = new TestClient();
-var_dump($api->test1());
-var_dump($api->test2());
+$client = new TestClient();
+var_dump($client->test1());
+var_dump($client->test2());

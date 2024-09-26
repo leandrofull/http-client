@@ -9,6 +9,13 @@ class HttpClient extends AbstractHttpClient
         parent::__construct();
     }
 
+    public static function getJson(string $url, string $method, ?array $payload = null): ?array
+    {
+        $client = (new self())->setEndpoint($url)->setMethod($method);
+        if ($payload !== null) $client->setPayload($payload);
+        return $client->run()->json();
+    }
+
     #[\Override]
     public function setEndpoint(string $endpoint): static
     {

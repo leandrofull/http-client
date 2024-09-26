@@ -4,6 +4,12 @@
 - PHP 8.2
 - Curl Extension
 - Json Extension
+- Composer
+
+## Install
+```
+composer require leandrofull/http-client
+```
 
 ## Example:
 
@@ -56,12 +62,12 @@ class TestClient
     }
 }
 
-$api = new TestClient();
-var_dump($api->test1());
-var_dump($api->test2());
+$client = new TestClient();
+var_dump($client->test1());
+var_dump($client->test2());
 ```
 
-## Client Methods:
+## Client:
 1. run()
 2. setEndpoint(endpoint: string)
 3. unsetEndpoint()
@@ -99,3 +105,13 @@ var_dump($api->test2());
 35. put(endpoint: string)
 36. patch(endpoint: string)
 37. delete(endpoint: string)
+38. reset()
+39. getJson(url: string, method: string, payload: array|null)
+
+## Response:
+1. status: int
+2. data: string|null
+3. errorMessage: string|null
+4. error: bool
+5. info: array|null
+6. json(): array|null
